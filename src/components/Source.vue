@@ -14,6 +14,7 @@
         },
         watch : {
             changeinput(n,o){
+                console.log(o);
                 this.$store.commit('changeinput' , n);
             }
         }

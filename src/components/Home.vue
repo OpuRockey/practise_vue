@@ -5,18 +5,26 @@
         Current value         : {{ inputVal }}<br>
         Computed Double value :{{ doubleInput }}<br>
         Watched less 5 value  :{{ lessFive }}<br>
+        Get Data from {{ gcd() }}
 
     </div>
 </template>
 
 <script>
+    import { exampleMixin } from '../mixins/exampleMixin' ;
     export default {
         name: "Home",
+        mixins: [exampleMixin],
         data(){
             return {
                 inputVal : '',
                 lessFive : ''
             }
+        },
+        methods : {
+            gcd : function(){
+               return this.getCalcData();
+            },
         },
         computed : {
             doubleInput(){
