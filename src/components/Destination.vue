@@ -1,6 +1,7 @@
 <template>
     <div>
-        Your Input is {{ getinputval() }}
+        Your Input is {{ getinputval() }}<br>
+        Previous text is {{ getprevtext() }}
     </div>
 </template>
 
@@ -17,6 +18,9 @@
                 let currentVal = this.$store.getters.getinputval ;
                     currentVal = (currentVal.length > 0) ? currentVal : '???' ;
                     return  currentVal;
+            },
+            getprevtext : function(){
+                return this.$store.getters.getprevtext[1] ;
             }
         },
         computed : {
